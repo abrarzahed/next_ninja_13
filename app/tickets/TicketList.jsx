@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-const getTicket = async () => {
+const getTickets = async () => {
+  // imitate delay
+  await new Promise((resolve) => setInterval(resolve, 2000));
   const response = await fetch("http://localhost:4000/tickets", {
     next: {
       revalidate: 0, // use 0 to opt out of using cache ,
@@ -9,7 +11,7 @@ const getTicket = async () => {
   return response.json();
 };
 const TicketList = async () => {
-  const tickets = await getTicket();
+  const tickets = await getTickets();
   console.log(tickets);
   return (
     <>
