@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Dojo Helpdesk | Dashboard",
+  description: "All available tickets",
+};
+
 export default function Home() {
   return (
     <main>
